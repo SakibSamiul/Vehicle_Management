@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:chassis_no",
+ "creation": "2025-05-26 15:10:43.193143",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "description_of_vehicle_section",
+  "chassis_no",
+  "car_model",
+  "color_name",
+  "origin_country",
+  "engine_number",
+  "model_year",
+  "seat_capacity",
+  "cc",
+  "unit",
+  "unit_price",
+  "in_words",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "description_of_vehicle_section",
+   "fieldtype": "Section Break",
+   "label": "Description of Vehicle"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "chassis_no.cc",
+   "fieldname": "cc",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "C.C",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "chassis_no.seat_capacity",
+   "fieldname": "seat_capacity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Seating Capacity",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "unit",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No. of Unit",
+   "length": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "in_words",
+   "fieldtype": "Data",
+   "label": "In Words",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "chassis_no.car_model",
+   "fieldname": "car_model",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of Vehicle",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "chassis_no.color",
+   "fieldname": "color_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Color",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "chassis_no.model_year",
+   "fieldname": "model_year",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Model",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "chassis_no.origin_country",
+   "fieldname": "origin_country",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Country",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Unit Price",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "chassis_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Chassis No",
+   "options": "Vehicle Details",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "chassis_no.engine_number",
+   "fieldname": "engine_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Engine Number",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-29 11:07:59.938108",
+ "modified_by": "Administrator",
+ "module": "Vehicle Management",
+ "name": "Vehicle Quotation Info",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

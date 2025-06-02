@@ -5,6 +5,10 @@ app_description = "Manage and track vehicles, availability, and status."
 app_email = "samiul@gmail.com"
 app_license = "mit"
 
+doctype_js = {
+  "Vehicle Price": "public/js/vehicle_price.js"
+}
+
 # Apps
 # ------------------
 

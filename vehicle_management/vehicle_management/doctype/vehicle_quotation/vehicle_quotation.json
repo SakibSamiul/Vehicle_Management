@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-05-26 14:53:48.806888",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "column_break_htbr",
+  "date",
+  "buyers_info_section",
+  "buyer_name",
+  "address",
+  "column_break_bwpc",
+  "account",
+  "vehicle_info_section",
+  "vehicle_info",
+  "section_break_pfqj",
+  "terms_and_conditions",
+  "fittings_and_accessories_tab",
+  "fittings_and_accessories_section",
+  "fittings_and_accessories"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "buyer_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Buyer's Name",
+   "options": "Buyer",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "account",
+   "fieldtype": "Data",
+   "label": "A/C",
+   "reqd": 1
+  },
+  {
+   "fieldname": "buyers_info_section",
+   "fieldtype": "Section Break",
+   "label": "Buyer's Info"
+  },
+  {
+   "fieldname": "fittings_and_accessories_section",
+   "fieldtype": "Section Break",
+   "label": "Fittings & Accessories"
+  },
+  {
+   "fieldname": "vehicle_info_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Info"
+  },
+  {
+   "fieldname": "vehicle_info",
+   "fieldtype": "Table",
+   "label": "Vehicle Info",
+   "options": "Vehicle Quotation Info"
+  },
+  {
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "Small Text",
+   "label": "Terms and Conditions"
+  },
+  {
+   "fieldname": "column_break_bwpc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_htbr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pfqj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "fittings_and_accessories_tab",
+   "fieldtype": "Tab Break",
+   "label": "Fittings & Accessories"
+  },
+  {
+   "fieldname": "fittings_and_accessories",
+   "fieldtype": "Small Text",
+   "label": "Fittings & Accessories"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "options": "VEH-QUO-.YYYY.-",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-05-29 12:06:32.181744",
+ "modified_by": "Administrator",
+ "module": "Vehicle Management",
+ "name": "Vehicle Quotation",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_views": 1
+}

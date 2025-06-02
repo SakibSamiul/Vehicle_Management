@@ -1,0 +1,229 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:chassis_no",
+ "creation": "2025-05-11 14:21:32.518161",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_info_tab",
+  "section_break_vtsw",
+  "posting_date",
+  "vehicle_info_section",
+  "chassis_no",
+  "car_name",
+  "vehicle_price_tab",
+  "vehicle_price_section",
+  "company_price",
+  "column_break_brty",
+  "customer_price",
+  "section_break_eelz",
+  "sale_price",
+  "other_items_section",
+  "other_vehicle_name",
+  "section_break_smvt",
+  "total_quantity",
+  "column_break_ljoc",
+  "total_amount",
+  "totals_section",
+  "column_break_ghey",
+  "column_break_vxvk",
+  "grand_total",
+  "in_words",
+  "amended_from",
+  "connections_tab"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "vehicle_info_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "chassis_no",
+   "fieldtype": "Link",
+   "label": "Vehicle Chassis No",
+   "options": "Vehicle Details",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "chassis_no.car_model",
+   "fieldname": "car_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Car Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_price_tab",
+   "fieldtype": "Tab Break",
+   "label": "Vehicle Price"
+  },
+  {
+   "fetch_from": "chassis_no.company_costing",
+   "fieldname": "company_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Company Price",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Customer Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sale_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Sale Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_items_section",
+   "fieldtype": "Section Break",
+   "label": "Other Items"
+  },
+  {
+   "fieldname": "other_vehicle_name",
+   "fieldtype": "Table",
+   "label": "Other Vehicle Items",
+   "options": "Others Vehicle Items"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "in_words",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "In Words"
+  },
+  {
+   "fieldname": "section_break_vtsw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vehicle_price_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Price"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vehicle Price",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_smvt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ljoc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Vehicle Info"
+  },
+  {
+   "fieldname": "column_break_ghey",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vxvk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_brty",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_eelz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections",
+   "show_dashboard": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Reference",
+   "link_doctype": "Vehicle Availability",
+   "link_fieldname": "chassis_no",
+   "table_fieldname": "connections_tab"
+  }
+ ],
+ "modified": "2025-05-29 11:27:40.492269",
+ "modified_by": "Administrator",
+ "module": "Vehicle Management",
+ "name": "Vehicle Price",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "car_name, grand_total",
+ "show_name_in_global_search": 1,
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_views": 1
+}
