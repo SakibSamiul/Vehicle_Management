@@ -82,4 +82,35 @@ frappe.ui.form.on('Vehicle Details', {
     //     }
     // },
 
- 
+
+
+
+ function set_next_review_id(frm, cdt, cdn) {
+  const title = frm.doc.title || frm.doc.name || "";
+  const words = title.trim().split(/\s+/);
+
+  let prefix = "DOC";
+
+  if (words.length === 1) {
+    prefix = words[0].slice(0, 3).toUpperCase();
+  } else if (words.length >= 2) {
+    const prefix1 = words[0].slice(0, 3).toUpperCase();
+    const prefix2 = words[1].slice(0, 3).toUpperCase();
+    prefix = `${prefix1}-${prefix2}`;
+  }
+
+  const rows = frm.doc.document_reviewers || [];
+  let max_num = 1000;
+
+  rows.forEach((row) => {
+    if (row.review_id && row.review_id.startsWith(`REV-${prefix}-`)) {
+      const num = parseInt(row.review_id.split("-").pop());
+      if (!isNaN(num) && num > max_num) {
+        max_num = num;
+      }
+    }
+  });
+
+  const next_id = `REV-${prefix}-${max_num + 1}`;
+  frappe.model.set_value(cdt, cdn, "review_id", next_id);
+}
